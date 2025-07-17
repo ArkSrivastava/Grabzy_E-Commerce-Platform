@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+:root {
+  --primary: #FFD700; /* Gold */
+  --primary-dark: #B8860B; /* Darker gold */
+  --accent: #FFC107; /* Accent yellow */
+  --bg: #23272F; /* Soft dark grey background */
+  --header-bg: #111216; /* Deep black for header */
+  --header-text: #FFD700; /* Gold for header text */
+  --text: #F5F5F5; /* Light text */
+  --card-radius: 16px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.18);
+  --transition: 0.25s cubic-bezier(.4,0,.2,1);
+}
+body {
+  font-family: 'Inter', 'Poppins', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover {
+  color: var(--accent);
+}
+.btn, button {
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  background: var(--primary);
+  color: #23272F;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+.btn:hover, button:hover {
+  background: var(--primary-dark);
+  color: var(--accent);
+  transform: translateY(-2px) scale(1.03);
+}
+.btn-secondary {
+  background: #23272F;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #23272F;
+}
+.card {
+  background: #181A20;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  transition: box-shadow var(--transition), transform var(--transition);
+  color: var(--text);
+}
+.card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+  transform: translateY(-4px) scale(1.02);
+}
+input, select, textarea {
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1.5px solid #444;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background: #23272F;
+  color: var(--text);
+  transition: border var(--transition), box-shadow var(--transition);
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px #FFD70055;
+  outline: none;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #181A20;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-dark);
+  border-radius: 8px;
+} 
