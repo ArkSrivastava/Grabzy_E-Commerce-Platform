@@ -1,0 +1,204 @@
+header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  padding: 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--header-text);
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-shadow: 0 2px 8px #000a;
+  display: flex;
+  align-items: center;
+}
+.logo span {
+  color: var(--primary);
+  font-weight: 900;
+  margin-left: 4px;
+}
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-desktop a {
+  color: var(--header-text);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  transition: background var(--transition), color var(--transition);
+}
+.nav-desktop a:hover, .nav-desktop a.active {
+  background: var(--primary);
+  color: #23272F;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-actions .btn, .header-actions button {
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #23272F;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  box-shadow: var(--shadow);
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+.header-actions .btn:hover, .header-actions button:hover {
+  background: var(--primary-dark);
+  color: var(--accent);
+  transform: translateY(-2px) scale(1.03);
+}
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--header-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: background var(--transition);
+}
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  background: var(--header-bg);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  z-index: 200;
+  padding: 1.5rem 2rem 2rem 2rem;
+  gap: 1rem;
+}
+.nav-mobile.open {
+  display: flex;
+}
+.nav-mobile .nav-link {
+  color: var(--header-text);
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  text-align: left;
+  transition: background var(--transition), color var(--transition);
+}
+.nav-mobile .nav-link:hover, .nav-mobile .nav-link.active {
+  background: var(--primary);
+  color: #23272F;
+}
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  color: #fff;
+  background: var(--primary);
+  border: none;
+  border-radius: 50%;
+  width: 2.7rem;
+  height: 2.7rem;
+  margin-right: 0.5rem;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+  box-shadow: 0 2px 8px #0003;
+  overflow: visible;
+}
+.cart-icon svg {
+  color: #fff !important;
+  font-size: 2rem !important;
+  z-index: 1;
+  display: block;
+}
+.cart-icon span.cart-label {
+  display: none;
+}
+@media (max-width: 600px) {
+  .cart-icon span.cart-label {
+    display: inline-block;
+    color: #fff;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+  }
+}
+.cart-badge {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  background: var(--accent);
+  color: #23272F;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 2px 7px;
+  min-width: 1.2rem;
+  text-align: center;
+  box-shadow: 0 1px 4px #0004;
+  border: 2px solid var(--header-bg);
+  z-index: 2;
+}
+.cart-tooltip {
+  display: none;
+  position: absolute;
+  bottom: -2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #23272F;
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px #0006;
+  z-index: 10;
+}
+.cart-icon:hover .cart-tooltip {
+  display: block;
+}
+.header-actions .cart-icon {
+  margin-right: 0.5rem;
+}
+@media (max-width: 900px) {
+  .nav-desktop {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
+  .header-container {
+    padding: 0.75rem 1rem;
+  }
+}
+@media (min-width: 901px) {
+  .nav-mobile {
+    display: none !important;
+  }
+  .mobile-menu-toggle {
+    display: none;
+  }
+} 
